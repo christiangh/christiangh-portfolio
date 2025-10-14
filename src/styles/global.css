@@ -1,1 +1,14 @@
 @import "tailwindcss";
+
+@theme {
+    --default-font-family: 'Rubik', sans-serif;
+    --font-funky: 'Shrikhand', cursive;
+
+    --color-naranja: oklch(0.72 0.18 35);
+    --color-mostaza: oklch(0.82 0.2 95);
+    --color-chocolate: oklch(0.35 0.05 35);
+    --color-beige: oklch(0.95 0.02 85);
+    --color-petroleo: oklch(0.45 0.09 260);
+    --color-coral: oklch(0.75 0.15 40);
+    --color-dusk: oklch(0.32 0.05 270);
+}
