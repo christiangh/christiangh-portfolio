@@ -12,25 +12,29 @@ const { title } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Christian García Herreras - Desarrollador frontend - { title }</title>
+		<title>Christian García - Desarrollador frontend - { title }</title>
 
 		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Shrikhand&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Monoton&family=Rubik:ital,wght@0,300..900;1,300..900&family=Shrikhand&display=swap" rel="stylesheet">
 	</head>
-	<body class="grid place-content-center p-20">
-		<CghHeader />
+	<body class="grid grid-cols-[450px_1fr] h-screen">
+		<header>
+			<CghHeader />
+		</header>
 
-		<main class="container">
-			<slot />
-		</div>
+		<main class="grid grid-rows-[auto_1fr] p-10">
+			<section class="mt-10 overflow-y-auto">
+				<slot />
+			</main>
+		</section>
 	</body>
 </html>
 
 <style>
 	html {
 		font-family: var(--default-font-family);
-		background: var(--color-beige);
+		background: var(--color-beige-cgh);
 		color: var(--color-dusk);
 	}
 </style>
