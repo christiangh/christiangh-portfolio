@@ -2,33 +2,56 @@
 import Logo from "./Logo.astro";
 ---
 
-<section class="grid gap-4 mb-8 px-10 place-items-center">
-	<Logo />
+<section class="mb-8 grid place-items-center gap-4 px-10">
+  <Logo />
 
-	<nav class="grid w-full sm:grid-rows-5 gap-4 place-items-start text-2xl">
-		<a href="/about-me" class="group inline-flex items-center gap-2 text-inherit">
-			<span class="link-bar w-6 h-1 rounded transition-all duration-300 group-hover:w-12 bg-orange-cgh"></span>
-			<span>Sobre mí</span>
-		</a>
-		<a href="/professional-experience" class="group inline-flex items-center gap-2 text-inherit">
-			<span class="link-bar w-6 h-1 rounded transition-all duration-300 group-hover:w-12 bg-coral-cgh"></span>
-			<span>Experiencia</span>
-		</a>
-		<a href="/education" class="group inline-flex items-center gap-2 text-inherit">
-			<span class="link-bar w-4 h-1 rounded transition-all duration-300 group-hover:w-12 bg-mustard-cgh"></span>
-			<span>Formación</span>
-		</a>
-		<a href="/projects" class="group inline-flex items-center gap-2 text-inherit">
-			<span class="link-bar w-4 h-1 rounded transition-all duration-300 group-hover:w-12 bg-chocolate-cgh"></span>
-			<span>Proyectos</span>
-		</a>
-		<a href="/contact" class="group inline-flex items-center gap-2 text-inherit">
-			<span class="link-bar w-4 h-1 rounded transition-all duration-300 group-hover:w-12 bg-blue-cgh"></span>
-			<span>Contacto</span>
-		</a>
-	</nav>
-</header>
+  <nav class="grid w-full place-items-start gap-4 text-2xl sm:grid-rows-5">
+    <a
+      href="#about-me"
+      class="group inline-flex items-center gap-2 text-inherit"
+    >
+      <span
+        class="link-bar bg-coral-cgh h-1 w-6 rounded transition-all duration-300 group-hover:w-12"
+      ></span>
+      <span>Sobre mí</span>
+    </a>
+    <a
+      href="#professional-experience"
+      class="group inline-flex items-center gap-2 text-inherit"
+    >
+      <span
+        class="link-bar bg-mustard-cgh h-1 w-6 rounded transition-all duration-300 group-hover:w-12"
+      ></span>
+      <span>Experiencia laboral</span>
+    </a>
+    <a
+      href="#education"
+      class="group inline-flex items-center gap-2 text-inherit"
+    >
+      <span
+        class="link-bar bg-chocolate-cgh h-1 w-6 rounded transition-all duration-300 group-hover:w-12"
+      ></span>
+      <span>Formación</span>
+    </a>
+    <a
+      href="#projects"
+      class="group inline-flex items-center gap-2 text-inherit"
+    >
+      <span
+        class="link-bar bg-mustard-cgh h-1 w-6 rounded transition-all duration-300 group-hover:w-12"
+      ></span>
+      <span>Proyectos</span>
+    </a>
+    <a
+      href="#contact"
+      class="group inline-flex items-center gap-2 text-inherit"
+    >
+      <span
+        class="link-bar bg-coral-cgh h-1 w-6 rounded transition-all duration-300 group-hover:w-12"
+      ></span>
+      <span>Contacto</span>
+    </a>
+  </nav>
+</section>
 
-<style>
-	
-</style>
+<style></style>

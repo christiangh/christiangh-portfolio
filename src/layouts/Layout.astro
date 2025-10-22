@@ -1,40 +1,43 @@
 ---
 import "../styles/global.css";
-import CghHeader from '../components/CghHeader.astro';
+import CghHeader from "../components/CghHeader.astro";
 
 const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Christian García - Desarrollador frontend - { title }</title>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Christian García - Desarrollador frontend - {title}</title>
 
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Monoton&family=Rubik:ital,wght@0,300..900;1,300..900&family=Shrikhand&display=swap" rel="stylesheet">
-	</head>
-	<body class="grid grid-cols-[450px_1fr] h-screen">
-		<header>
-			<CghHeader />
-		</header>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Monoton&family=Rubik:ital,wght@0,300..900;1,300..900&family=Shrikhand&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="overflow-y-autoS h-screen">
+    <header class="fixed top-0 left-0 h-screen w-[450px] p-6">
+      <CghHeader />
+    </header>
 
-		<main class="grid grid-rows-[auto_1fr] p-10">
-			<section class="mt-10 overflow-y-auto">
-				<slot />
-			</main>
-		</section>
-	</body>
+    <main class="ml-[450px] p-10">
+      <section class="mt-10">
+        <slot />
+      </section>
+    </main>
+  </body>
 </html>
 
 <style>
-	html {
-		font-family: var(--default-font-family);
-		background: var(--color-beige-cgh);
-		color: var(--color-dusk);
-	}
+  html {
+    font-family: var(--default-font-family);
+    background: var(--color-beige-cgh);
+    color: var(--color-dusk);
+  }
 </style>
