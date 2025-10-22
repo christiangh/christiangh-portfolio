@@ -1,0 +1,26 @@
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const id = entry.target.id;
+        const link = document.querySelector(`nav a[href="#${id}"]`);
+        if (entry.isIntersecting && link) {
+          document
+            .querySelectorAll("nav a.active")
+            .forEach((el) => el.classList.remove("active"));
+          link.classList.add("active");
+        }
+      });
+    },
+    {
+      rootMargin: "0px 0px -60% 0px",
+      threshold: 0.2,
+    },
+  );
+
+  document.addEventListener("DOMContentLoaded", () => {
+    document
+      .querySelectorAll("section[id]")
+      .forEach((section) => observer.observe(section));
+  });
+</script>

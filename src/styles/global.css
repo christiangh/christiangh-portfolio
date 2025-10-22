@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-  --default-font-family: "Shrikhand", sans-serif;
-  --font-funky: "Monoton", cursive;
+  --default-font-family: "Rubik", sans-serif;
+  /* --font-funky: "Monoton", cursive; */
+  --font-funky: "Shrikhand", cursive;
 
   --color-orange-cgh: oklch(0.72 0.18 35);
   --color-mustard-cgh: oklch(0.82 0.2 95);
@@ -12,4 +13,14 @@
   --color-blue-cgh: oklch(0.735 0.144 181);
   --color-coral-cgh: oklch(0.75 0.15 40);
   --color-dusk-cgh: oklch(0.32 0.05 270);
+}
+
+@layer utilities {
+  .active {
+    @apply text-blue-cgh;
+  }
+
+  .active .link-bar {
+    @apply w-12;
+  }
 }
