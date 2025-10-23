@@ -1,155 +1,33 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const mainSections = await getCollection("main-sections");
+const sortedMainSections = mainSections.sort(
+  (a, b) => a.data.order - b.data.order,
+);
+
+const renderedSections = await Promise.all(
+  sortedMainSections.map(async (entry) => {
+    const { Content } = await entry.render();
+    return {
+      id: entry.data.id,
+      title: entry.data.title,
+      Content,
+    };
+  }),
+);
 ---
 
 <Layout>
-  <section id="about-me" class="mb-16">
-    <h2 class="font-funky mb-4 text-3xl">Sobre mí</h2>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna
-      eu tincidunt consectetur, nisi nisl lacinia mi, nec fermentum justo sapien
-      nec lorem.
-    </p>
-    <p>
-      Curabitur vel sem at sapien tempor tincidunt. Suspendisse potenti. Integer
-      nec odio. Praesent libero. Sed cursus ante dapibus diam.
-    </p>
-    <p>
-      Aliquam erat volutpat. Vivamus sagittis lacus vel augue laoreet rutrum
-      faucibus. Nulla facilisi. Donec vitae sapien ut libero venenatis faucibus.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna
-      eu tincidunt consectetur, nisi nisl lacinia mi, nec fermentum justo sapien
-      nec lorem.
-    </p>
-    <p>
-      Curabitur vel sem at sapien tempor tincidunt. Suspendisse potenti. Integer
-      nec odio. Praesent libero. Sed cursus ante dapibus diam.
-    </p>
-    <p>
-      Aliquam erat volutpat. Vivamus sagittis lacus vel augue laoreet rutrum
-      faucibus. Nulla facilisi. Donec vitae sapien ut libero venenatis faucibus.
-    </p>
-  </section>
-
-  <section id="professional-experience" class="mb-16">
-    <h2 class="font-funky mb-4 text-3xl">Experiencia laboral</h2>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna
-      eu tincidunt consectetur, nisi nisl lacinia mi, nec fermentum justo sapien
-      nec lorem.
-    </p>
-    <p>
-      Curabitur vel sem at sapien tempor tincidunt. Suspendisse potenti. Integer
-      nec odio. Praesent libero. Sed cursus ante dapibus diam.
-    </p>
-    <p>
-      Aliquam erat volutpat. Vivamus sagittis lacus vel augue laoreet rutrum
-      faucibus. Nulla facilisi. Donec vitae sapien ut libero venenatis faucibus.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna
-      eu tincidunt consectetur, nisi nisl lacinia mi, nec fermentum justo sapien
-      nec lorem.
-    </p>
-    <p>
-      Curabitur vel sem at sapien tempor tincidunt. Suspendisse potenti. Integer
-      nec odio. Praesent libero. Sed cursus ante dapibus diam.
-    </p>
-    <p>
-      Aliquam erat volutpat. Vivamus sagittis lacus vel augue laoreet rutrum
-      faucibus. Nulla facilisi. Donec vitae sapien ut libero venenatis faucibus.
-    </p>
-  </section>
-
-  <section id="education" class="mb-16">
-    <h2 class="font-funky mb-4 text-3xl">Formación</h2>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna
-      eu tincidunt consectetur, nisi nisl lacinia mi, nec fermentum justo sapien
-      nec lorem.
-    </p>
-    <p>
-      Curabitur vel sem at sapien tempor tincidunt. Suspendisse potenti. Integer
-      nec odio. Praesent libero. Sed cursus ante dapibus diam.
-    </p>
-    <p>
-      Aliquam erat volutpat. Vivamus sagittis lacus vel augue laoreet rutrum
-      faucibus. Nulla facilisi. Donec vitae sapien ut libero venenatis faucibus.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna
-      eu tincidunt consectetur, nisi nisl lacinia mi, nec fermentum justo sapien
-      nec lorem.
-    </p>
-    <p>
-      Curabitur vel sem at sapien tempor tincidunt. Suspendisse potenti. Integer
-      nec odio. Praesent libero. Sed cursus ante dapibus diam.
-    </p>
-    <p>
-      Aliquam erat volutpat. Vivamus sagittis lacus vel augue laoreet rutrum
-      faucibus. Nulla facilisi. Donec vitae sapien ut libero venenatis faucibus.
-    </p>
-  </section>
-
-  <section id="projects" class="mb-16">
-    <h2 class="font-funky mb-4 text-3xl">Proyectos</h2>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna
-      eu tincidunt consectetur, nisi nisl lacinia mi, nec fermentum justo sapien
-      nec lorem.
-    </p>
-    <p>
-      Curabitur vel sem at sapien tempor tincidunt. Suspendisse potenti. Integer
-      nec odio. Praesent libero. Sed cursus ante dapibus diam.
-    </p>
-    <p>
-      Aliquam erat volutpat. Vivamus sagittis lacus vel augue laoreet rutrum
-      faucibus. Nulla facilisi. Donec vitae sapien ut libero venenatis faucibus.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna
-      eu tincidunt consectetur, nisi nisl lacinia mi, nec fermentum justo sapien
-      nec lorem.
-    </p>
-    <p>
-      Curabitur vel sem at sapien tempor tincidunt. Suspendisse potenti. Integer
-      nec odio. Praesent libero. Sed cursus ante dapibus diam.
-    </p>
-    <p>
-      Aliquam erat volutpat. Vivamus sagittis lacus vel augue laoreet rutrum
-      faucibus. Nulla facilisi. Donec vitae sapien ut libero venenatis faucibus.
-    </p>
-  </section>
-
-  <section id="contact" class="mb-16">
-    <h2 class="font-funky mb-4 text-3xl">Contacto</h2>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna
-      eu tincidunt consectetur, nisi nisl lacinia mi, nec fermentum justo sapien
-      nec lorem.
-    </p>
-    <p>
-      Curabitur vel sem at sapien tempor tincidunt. Suspendisse potenti. Integer
-      nec odio. Praesent libero. Sed cursus ante dapibus diam.
-    </p>
-    <p>
-      Aliquam erat volutpat. Vivamus sagittis lacus vel augue laoreet rutrum
-      faucibus. Nulla facilisi. Donec vitae sapien ut libero venenatis faucibus.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna
-      eu tincidunt consectetur, nisi nisl lacinia mi, nec fermentum justo sapien
-      nec lorem.
-    </p>
-    <p>
-      Curabitur vel sem at sapien tempor tincidunt. Suspendisse potenti. Integer
-      nec odio. Praesent libero. Sed cursus ante dapibus diam.
-    </p>
-    <p>
-      Aliquam erat volutpat. Vivamus sagittis lacus vel augue laoreet rutrum
-      faucibus. Nulla facilisi. Donec vitae sapien ut libero venenatis faucibus.
-    </p>
-  </section>
+  {
+    renderedSections.map(({ id, title, Content }) => (
+      <section id={id} class="mb-16">
+        <h2 class="font-funky text-coral-cgh mb-4 text-3xl">{title}</h2>
+        <div class="prose">
+          <Content />
+        </div>
+      </section>
+    ))
+  }
 </Layout>

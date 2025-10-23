@@ -1,0 +1,14 @@
+<script>
+  document.addEventListener("mousemove", (e) => {
+    const x = e.clientX / window.innerWidth;
+    const y = e.clientY / window.innerHeight;
+
+    const offsetX = (0.5 - x) * 20;
+    const offsetY = (0.5 - y) * 20;
+
+    document.body.style.setProperty(
+      "--bg-offset",
+      `${50 + offsetX}% ${50 + offsetY}%`,
+    );
+  });
+</script>
