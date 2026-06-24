@@ -6,14 +6,21 @@
   /* --font-funky: "Monoton", cursive; */
   --font-funky: "Shrikhand", cursive;
 
-  --color-orange-cgh: oklch(0.72 0.18 35);
-  --color-mustard-cgh: oklch(0.82 0.2 95);
-  --color-chocolate-cgh: oklch(0.35 0.05 35);
-  --color-beige-cgh: oklch(0.95 0.02 85);
-  --color-petrol-cgh: oklch(0.45 0.09 260);
-  --color-blue-cgh: oklch(0.735 0.144 181);
-  --color-coral-cgh: oklch(0.75 0.15 40);
-  --color-dusk-cgh: oklch(0.32 0.05 270);
+  /* warm core */
+  --color-custard-cgh: oklch(94.8% 0.061 94.1); /* #FBEEC0 */
+  --color-sand-cgh: oklch(92.2% 0.033 85.5); /* #EFE4CD */
+  --color-marigold-cgh: oklch(80.5% 0.155 79.3); /* #F4B22E */
+  --color-tangerine-cgh: oklch(72.8% 0.162 56.2); /* #F2882B */
+  --color-burnt-orange-cgh: oklch(60.7% 0.2 34.2); /* #E0431D */
+  --color-chili-cgh: oklch(49.4% 0.157 33.6); /* #A8331A */
+  --color-espresso-cgh: oklch(27.2% 0.05 51.4); /* #3A1F0E */
+  --color-dusk-cgh: oklch(0.32 0.05 270); /* #555555 */
+
+  /* funky blue */
+  --color-ice-cgh: oklch(89.3% 0.042 219.4); /* #BEE3EF */
+  --color-sky-pop-cgh: oklch(75.8% 0.083 224.9); /* #74BCD8 */
+  --color-pacific-cgh: oklch(58.1% 0.1 223.4); /* #1F87A6 */
+  --color-deep-dive-cgh: oklch(40.9% 0.071 223.4); /* #0F5266 */
 }
 
 @layer utilities {
@@ -22,11 +29,11 @@
 
     &.active {
       & > .link-bar {
-        @apply bg-blue-cgh w-12;
+        @apply bg-pacific-cgh w-12;
       }
 
       & > .link-text {
-        @apply text-blue-cgh;
+        @apply text-pacific-cgh;
       }
     }
   }
