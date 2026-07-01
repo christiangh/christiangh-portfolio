@@ -8,21 +8,21 @@ import Logo from "./Logo.astro";
   <nav class="grid w-full place-items-start gap-4 text-xl sm:grid-rows-5">
     <a
       href="#aboutMe"
-      class="group font-funky active inline-flex items-center gap-2 text-inherit"
+      class="group active inline-flex items-center gap-2 text-inherit"
     >
       <span
         class="link-bar bg-espresso-cgh h-1 w-6 rounded duration-300 group-hover:w-12"
       ></span>
-      <span class="link-text text-tangerine-cgh">Sobre mí</span>
+      <span class="link-text text-funky">Sobre mí</span>
     </a>
     <a
       href="#professionalExperience"
-      class="group font-funky inline-flex items-center gap-2 text-inherit"
+      class="group inline-flex items-center gap-2 text-inherit"
     >
       <span
         class="link-bar bg-marigold-cgh h-1 w-6 rounded duration-300 group-hover:w-12"
       ></span>
-      <span class="link-text text-tangerine-cgh">Experiencia laboral</span>
+      <span class="link-text text-funky">Experiencia laboral</span>
     </a>
     <a
       href="#education"
@@ -31,7 +31,7 @@ import Logo from "./Logo.astro";
       <span
         class="link-bar bg-espresso-cgh h-1 w-6 rounded duration-300 group-hover:w-12"
       ></span>
-      <span class="link-text text-tangerine-cgh">Formación</span>
+      <span class="link-text text-funky">Formación</span>
     </a>
     <a
       href="#projects"
@@ -40,7 +40,7 @@ import Logo from "./Logo.astro";
       <span
         class="link-bar bg-marigold-cgh h-1 w-6 rounded duration-300 group-hover:w-12"
       ></span>
-      <span class="link-text text-tangerine-cgh">Proyectos</span>
+      <span class="link-text text-funky">Proyectos</span>
     </a>
     <a
       href="#contact"
@@ -49,9 +49,75 @@ import Logo from "./Logo.astro";
       <span
         class="link-bar bg-espresso-cgh h-1 w-6 rounded duration-300 group-hover:w-12"
       ></span>
-      <span class="link-text text-tangerine-cgh">Contacto</span>
+      <span class="link-text text-funky">Contacto</span>
     </a>
   </nav>
 </section>
 
-<style></style>
+<style>
+  .nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .nav a {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    width: max-content;
+    font-family: "Bagel Fat One", cursive;
+    font-size: 21px;
+    transform: skewX(-4deg);
+    color: #c98a1e; /* reposo: simple */
+    transition:
+      color 0.25s ease,
+      text-shadow 0.25s ease;
+  }
+  .nav a:hover {
+    /* hover: sombras */
+    color: #f4b22e;
+    text-shadow:
+      1px 1px 0 #e0431d,
+      2px 3px 0 #3a1f0e;
+  }
+  .nav a.active {
+    /* activo: azul */
+    color: #74bcd8;
+    text-shadow:
+      1px 1px 0 #1f87a6,
+      2px 3px 0 #3a1f0e;
+  }
+  /* estrella */
+  .nav .star {
+    flex: 0 0 24px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .nav .star svg {
+    width: 22px;
+    height: 22px;
+    fill: #e0431d;
+    opacity: 0;
+    transform: scale(0.4) rotate(-45deg);
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s cubic-bezier(0.5, 1.6, 0.4, 1),
+      fill 0.25s ease;
+  }
+  .nav a:hover .star svg {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+  .nav a.active .star svg {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+    fill: #1f87a6;
+  }
+</style>

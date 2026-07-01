@@ -23,7 +23,7 @@ const renderedSections = await Promise.all(
   {
     renderedSections.map(({ id, title, Content }) => (
       <section id={id} class="mb-16">
-        <h2 class="font-funky text-tangerine-cgh mb-4 text-3xl">{title}</h2>
+        <h2 class="font-funky text-funky mb-4 text-3xl">{title}</h2>
         <div class="prose">
           <Content />
         </div>
