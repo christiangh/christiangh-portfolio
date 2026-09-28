@@ -7,9 +7,10 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "formatgit": "npx prettier . --write",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "formatgit": "prettier . --write",
+    "format:check": "prettier . --check"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.14",

@@ -1,15 +1,19 @@
 <script>
+  const setActive = (link: Element) => {
+    document.querySelectorAll("nav a.active").forEach((el) => {
+      el.classList.remove("active");
+      el.removeAttribute("aria-current");
+    });
+    link.classList.add("active");
+    link.setAttribute("aria-current", "page");
+  };
+
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         const id = entry.target.id;
         const link = document.querySelector(`nav a[href="#${id}"]`);
-        if (entry.isIntersecting && link) {
-          document
-            .querySelectorAll("nav a.active")
-            .forEach((el) => el.classList.remove("active"));
-          link.classList.add("active");
-        }
+        if (entry.isIntersecting && link) setActive(link);
       });
     },
     {
@@ -22,5 +26,9 @@
     document
       .querySelectorAll("section[id]")
       .forEach((section) => observer.observe(section));
+
+    document
+      .querySelectorAll('nav a[href^="#"]')
+      .forEach((link) => link.addEventListener("click", () => setActive(link)));
   });
 </script>

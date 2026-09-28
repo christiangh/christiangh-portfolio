@@ -1,0 +1,33 @@
+---
+/**
+ * Estrella 70's — Christian García
+ * Hereda el color del texto (fill: currentColor) salvo que pases `color`.
+ *
+ *   <Star />                         // sigue el color del padre
+ *   <Star size={16} color="#E0431D" />
+ *   <Star class="opacity-0 group-hover:opacity-100" />
+ */
+interface Props {
+  size?: number;
+  color?: string;
+  class?: string;
+}
+const {
+  size = 22,
+  color = "currentColor",
+  class: className = "",
+} = Astro.props;
+---
+
+<svg
+  class={className}
+  width={size}
+  height={size}
+  viewBox="0 0 24 24"
+  fill={color}
+  aria-hidden="true"
+  focusable="false"
+>
+  <path d="M12 0c1 6 5 10 12 12-7 2-11 6-12 12-1-6-5-10-12-12 7-2 11-6 12-12z"
+  ></path>
+</svg>

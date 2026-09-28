@@ -23,44 +23,46 @@
   --color-deep-dive-cgh: oklch(40.9% 0.071 223.4); /* #0F5266 */
 }
 
-@layer utilities {
-  .text-funky {
-    font-family: "Bagel Fat One", cursive;
-    font-size: clamp(2rem, 4vw, 2.9rem);
-    color: var(--color-marigold-cgh);
-    letter-spacing: -0.5px;
-    transform: skewX(-4deg);
-    text-shadow:
-      2px 2px 0 var(--color-tangerine-cgh),
-      4px 4px 0 var(--color-burnt-orange-cgh),
-      6px 6px 0 var(--color-chili-cgh),
-      7px 8px 0 var(--color-espresso-cgh);
-  }
+@utility text-funky {
+  font-family: "Bagel Fat One", cursive;
+  font-size: clamp(2rem, 4vw, 2.9rem);
+  color: var(--color-marigold-cgh);
+  letter-spacing: -0.5px;
+  transform: skewX(-4deg);
+  text-shadow:
+    2px 2px 0 var(--color-tangerine-cgh),
+    4px 4px 0 var(--color-burnt-orange-cgh),
+    7px 8px 0 var(--color-espresso-cgh);
+}
 
-  a {
-    transition: none;
+@utility text-funky-active {
+  font-family: "Bagel Fat One", cursive;
+  font-size: clamp(2rem, 4vw, 2.9rem);
+  color: var(--color-sky-pop-cgh);
+  letter-spacing: -0.5px;
+  transform: skewX(-4deg);
+  text-shadow:
+    2px 2px 0 var(--color-pacific-cgh),
+    4px 4px 0 var(--color-deep-dive-cgh),
+    7px 8px 0 var(--color-espresso-cgh);
+}
 
-    .link-text {
-      font-size: 1.375rem;
-      letter-spacing: -0.3px;
-      text-shadow:
-        1px 1px 0 var(--color-tangerine-cgh),
-        2px 2px 0 var(--color-burnt-orange-cgh),
-        3px 4px 0 var(--color-espresso-cgh);
-    }
+@utility text-funky-small {
+  font-family: "Bagel Fat One", cursive;
+  color: var(--color-marigold-cgh);
+  letter-spacing: -0.3px;
+  text-shadow:
+    1px 1px 0 var(--color-tangerine-cgh),
+    2px 2px 0 var(--color-burnt-orange-cgh),
+    3px 4px 0 var(--color-espresso-cgh);
+}
 
-    &.active {
-      & > .link-bar {
-        @apply bg-sky-pop-cgh w-12;
-      }
-
-      & > .link-text {
-        color: var(--color-sky-pop-cgh);
-        text-shadow:
-          1px 1px 0 var(--color-pacific-cgh),
-          2px 2px 0 var(--color-deep-dive-cgh),
-          3px 4px 0 var(--color-espresso-cgh);
-      }
-    }
-  }
+@utility text-funky-small-active {
+  font-family: "Bagel Fat One", cursive;
+  color: var(--color-sky-pop-cgh);
+  letter-spacing: -0.3px;
+  text-shadow:
+    1px 1px 0 var(--color-pacific-cgh),
+    2px 2px 0 var(--color-deep-dive-cgh),
+    3px 4px 0 var(--color-espresso-cgh);
 }

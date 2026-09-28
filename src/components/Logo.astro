@@ -21,7 +21,7 @@ interface Props {
 const {
   firstLine = "Christian",
   secondLine = "García",
-  tagline = "Desarrollador · Frontend",
+  tagline = "Desarrollador Frontend",
   scale = 1,
 } = Astro.props;
 
@@ -37,9 +37,7 @@ const lines = [firstLine, secondLine];
 
 <div class="cg-logo" style={`--cg-scale:${scale}`}>
   <div class="cg-logo__name">
-    {lines.map((word) => (
-      <div>{word}</div>
-    ))}
+    {lines.map((word) => <div>{word}</div>)}
   </div>
 
   <div class="cg-logo__tag">{tagline}</div>

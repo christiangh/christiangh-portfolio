@@ -1,0 +1,47 @@
+---
+/**
+ * NavLink — un enlace del menú lateral con la estrella 70's.
+ *
+ * Reposo: texto simple.
+ * Hover:  sombras por capas + la estrella aparece (fade + pop).
+ * Activo: azul con esas mismas sombras (pasa `active`).
+ *
+ *   <NavLink href="#aboutMe" active>Sobre mí</NavLink>
+ *   <NavLink href="#projects">Proyectos</NavLink>
+ *
+ * Nota: el hueco de 24px (w-6) se reserva siempre, así el texto NO salta
+ * cuando la estrella aparece — solo hace fade + escala.
+ */
+interface Props {
+  href: string;
+  active?: boolean;
+}
+const { href, active = false } = Astro.props;
+import Star from "./Star.astro";
+---
+
+<a
+  href={href}
+  class:list={[
+    "group inline-flex h-9 items-center gap-3 text-inherit no-underline",
+    "font-funky -skew-x-6 transition-[color,text-shadow] duration-300",
+    "text-marigold-cgh hover:text-funky-small",
+    "[&.active]:text-funky-small-active [&.active]:hover:text-funky-small-active",
+    { active },
+  ]}
+  aria-current={active ? "page" : undefined}
+>
+  <span class="inline-flex w-6 shrink-0 items-center justify-center">
+    <Star
+      class:list={[
+        "transition-all duration-300 ease-[cubic-bezier(.5,1.6,.4,1)]",
+        "text-burnt-orange-cgh group-hover:text-tangerine-cgh -rotate-45 group-hover:rotate-0",
+        "group-[.active]:text-pacific-cgh group-[.active]:rotate-0",
+      ]}
+    />
+  </span>
+  <span
+    class="inline-block origin-left leading-none transition-transform duration-300 group-hover:scale-110 group-[.active]:scale-110"
+    ><slot /></span
+  >
+</a>

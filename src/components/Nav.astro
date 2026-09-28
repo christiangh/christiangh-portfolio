@@ -1,0 +1,43 @@
+---
+/**
+ * Nav — menú lateral completo. Recibe la lista de enlaces y marca el activo.
+ *
+ *   <Nav activeHref="#aboutMe" />           // usa los items por defecto
+ *   <Nav items={misItems} activeHref={...} />
+ *
+ * `active` de cada enlace es JS-driven en tu caso (anclas + scroll-spy):
+ * pásale `activeHref` y este componente marca el que coincida. Si tu scroll-spy
+ * cambia la sección visible en cliente, actualiza la clase `active`/aria-current
+ * del <a> desde ese script (los selectores siguen siendo los mismos).
+ */
+interface Item {
+  href: string;
+  label: string;
+}
+interface Props {
+  items?: Item[];
+  activeHref?: string;
+}
+import NavLink from "./NavLink.astro";
+
+const {
+  items = [
+    { href: "#aboutMe", label: "Sobre mí" },
+    { href: "#professionalExperience", label: "Experiencia laboral" },
+    { href: "#education", label: "Formación" },
+    { href: "#projects", label: "Proyectos" },
+    { href: "#contact", label: "Contacto" },
+  ],
+  activeHref = "#aboutMe",
+} = Astro.props;
+---
+
+<nav class="grid w-full place-items-start gap-4 text-2xl sm:grid-rows-5">
+  {
+    items.map((it) => (
+      <NavLink href={it.href} active={it.href === activeHref}>
+        {it.label}
+      </NavLink>
+    ))
+  }
+</nav>
